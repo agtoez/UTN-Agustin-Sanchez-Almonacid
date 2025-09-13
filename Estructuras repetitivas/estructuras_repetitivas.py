@@ -4,6 +4,9 @@ for i in range(1, 101):
     print(i)
 # 2) Desarrolla un programa que solicite al usuario un número entero y determine la cantidad de
 # dígitos que contiene.
+num = int(input("Ingrese un número para calcular la cantidad de dígitos."))
+cantDigitos = len(str(num))
+print(f"El número: {num}, tiene: {cantDigitos} dígitos.")
 # 3) Escribe un programa que sume todos los números enteros comprendidos entre dos valores
 # dados por el usuario, excluyendo esos dos valores.
 # 4) Elabora un programa que permita al usuario ingresar números enteros y los sume en
