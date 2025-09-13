@@ -18,8 +18,25 @@ print(f"El total de la suma de los enteros entre: {entre}; hasta: {hasta}; es: {
 # 4) Elabora un programa que permita al usuario ingresar números enteros y los sume en
 # secuencia. El programa debe detenerse y mostrar el total acumulado cuando el usuario ingrese
 # un 0.
+tot = 0
+n = int(input("Ingrese un número distinto a 0 para inicializar la suma, (este no se sumará): "))
+if (n > 0):
+    while(n != 0):
+        n = int(input("Ingrese un número distinto a 0, ingrese 0 para finalizar."))
+        tot = tot + n
+    print(f"El total es: {tot}")
+else:
+    print("El número debe ser distinto a 0.")
 # 5) Crea un juego en el que el usuario deba adivinar un número aleatorio entre 0 y 9. Al final, el
 # programa debe mostrar cuántos intentos fueron necesarios para acertar el número.
+import random
+nAl = random.randint(0, 9)
+nU = 10
+acum = 0
+while(nU != nAl):
+    nU = int(input(print("Intente adivinar el número ingresando enteros entre 0 y 9: ")))
+    acum += 1
+print(f"Has acertado, el número es: {nAl} y ha tomado: {acum} intentos")
 # 6) Desarrolla un programa que imprima en pantalla todos los números pares comprendidos
 # entre 0 y 100, en orden decreciente.
 # 7) Crea un programa que calcule la suma de todos los números comprendidos entre 0 y un
