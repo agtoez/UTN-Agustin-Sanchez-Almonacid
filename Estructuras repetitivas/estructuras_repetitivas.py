@@ -86,3 +86,13 @@ print(f"La media de los {cantidad} números ingresados es: {media}")
 
 # 10) Escribe un programa que invierta el orden de los dígitos de un número ingresado por el
 # usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745.
+
+num10 = int(input("Ingrese un número: "))
+num_invertido = 0
+
+while num10 > 0:
+    digito10 = num10 % 10
+    num_invertido = num_invertido * 10 + digito10
+    num10 = num10 // 10
+
+print(f"El número invertido es: {num_invertido}")
