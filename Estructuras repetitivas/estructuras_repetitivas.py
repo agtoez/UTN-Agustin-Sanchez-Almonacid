@@ -9,6 +9,12 @@ cantDigitos = len(str(num))
 print(f"El número: {num}, tiene: {cantDigitos} dígitos.")
 # 3) Escribe un programa que sume todos los números enteros comprendidos entre dos valores
 # dados por el usuario, excluyendo esos dos valores.
+entre = int(input("Ingrese el número desde el que quiere sumar(Este no se sumará):"))
+hasta = int(input("Ingrese el número hasta el que quiere sumar(Este tampoco se sumará):"))
+total = 0
+for i in range(entre, hasta):
+    total += i
+print(f"El total de la suma de los enteros entre: {entre}; hasta: {hasta}; es: {total}")
 # 4) Elabora un programa que permita al usuario ingresar números enteros y los sume en
 # secuencia. El programa debe detenerse y mostrar el total acumulado cuando el usuario ingrese
 # un 0.
