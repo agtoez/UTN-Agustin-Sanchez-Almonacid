@@ -1,73 +1,84 @@
-# Conversor de decimal a binario y de binario a decimal.
-print("||||Conversor de decimal a binario y de binario a decimal.||||")
+# Conversor de decimal <-> binario (sin try/except, validaciones sencillas)
+print("|||| Conversor de decimal a binario y de binario a decimal ||||")
 
-#Abrimos búcle while
 while True:
-
-#Mostramos las opciones
     print("\nIngresá 1 para convertir de decimal a binario.")
     print("Ingresá 2 para convertir de binario a decimal.")
     print("Ingresá 0 para salir.")
 
-#Solicitamos al usuario que ingrese una opción válida.
-    try:
-        opcion = int(input("Por favor, digite una de las siguientes opciones: [ 0 | 1 | 2 ]: "))
+    opcion_txt = input("Por favor, digite una de las opciones [0 | 1 | 2]: ").strip()
 
-#Si el usuario ingresa un número distinto se noticica. 
-    except ValueError:
+    if opcion_txt not in ("0", "1", "2"):
         print("Opción inválida. Debe ingresar 0, 1 o 2.")
         continue
 
-#Si el usuario elige 0, se interrumpe el programa.
+    opcion = int(opcion_txt)
+
     if opcion == 0:
         print("¡Hasta luego!")
         break
 
-#Si el usuario elige 1, se ingresa a la primera opción del programa.
     elif opcion == 1:
-
-#Se solicita un número decimal, de tipo integer.
-        try:
-            numero = int(input("Ingrese un número decimal: "))
-
-#Si el tipo de dato es distinto, se notifica al usuario y se vuelve al menú.
-        except ValueError:
-            print("Error: debe ingresar un número entero.")
+        # Decimal -> binario
+        dec_txt = input("Ingrese un número decimal (entero, puede ser negativo): ").strip()
+        if dec_txt == "":
+            print("Error: entrada vacía.")
             continue
 
-#Se empieza a construir el número binario:
-#Se declara la variable binario como una string vacía.
-        binario = ""
-
-#Corroboramos si es 0, ya que es igual en ambos sistemas.
-        if numero == 0:
-            binario = "0"
-
-#Si es distinto a 0, se ejecuta un búcle while, que construye el número binario y lo muestra.
+        # Chequeo de signo y dígitos
+        if dec_txt[0] == "-":
+            cuerpo = dec_txt[1:]
+            signo = -1
         else:
-            while numero > 0:
-                resto = numero % 2
-                binario = str(resto) + binario
-                numero = numero // 2
+            cuerpo = dec_txt
+            signo = 1
+
+        if cuerpo == "" or not cuerpo.isdigit():
+            print("Error: debe ingresar un número entero válido (ej. 42 o -5).")
+            continue
+
+        numero = int(dec_txt)
+        if numero == 0:
+            print("El número en binario es: 0")
+            continue
+
+        n = abs(numero)
+        binario = ""
+        while n > 0:
+            resto = n % 2
+            binario = str(resto) + binario
+            n = n // 2
+
+        if numero < 0:
+            binario = "-" + binario
 
         print(f"El número en binario es: {binario}")
         print("Puede seguir usando el conversor o salir con 0.")
 
-#Se solicita que ingrese un número binario.
     elif opcion == 2:
-        numero = input("Ingresá un número binario: ").strip()
+        # Binario -> decimal
+        bin_txt = input("Ingresá un número binario (solo 0 y 1, opcional '-' al inicio): ").strip()
+        if bin_txt == "":
+            print("Error: entrada vacía.")
+            continue
 
-        #Comprobamos que solo tenga 0 y 1:
-        if set(numero) <= {"0", "1"} and numero != "":
-            decimal = 0
-            longitud = len(numero)
-            #Construimos y mostramos el número decimal:
-            for i in range(longitud):
-                digito = int(numero[longitud - 1 - i])
-                decimal += digito * (2 ** i)
-            print(f"El número en decimal es: {decimal}")
-            print("Puede seguir usando el conversor o salir con 0.")
+        if bin_txt[0] == "-":
+            cuerpo = bin_txt[1:]
+            negativo = True
         else:
+            cuerpo = bin_txt
+            negativo = False
+
+        if cuerpo == "" or any(ch not in ("0", "1") for ch in cuerpo):
             print("Error: el número binario solo puede contener 0 y 1.")
-    else:
-        print("Opción incorrecta, intentá de nuevo.")
+            continue
+
+        decimal = 0
+        for ch in cuerpo:
+            decimal = decimal * 2 + int(ch)
+
+        if negativo:
+            decimal = -decimal
+
+        print(f"El número en decimal es: {decimal}")
+        print("Puede seguir usando el conversor o salir con 0.")
