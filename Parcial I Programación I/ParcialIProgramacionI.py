@@ -107,6 +107,8 @@ while True:
         #Valida que el título no esté vacío.
         if titulo == "":
             print(">> El título no puede estar vacío.")
+        elif titulo in titulos:
+            print(">> El título ya se encuentra en el catálogo.")
         else:
             #Solicita la cantidad de ejemplares disponibles del nuevo libro.
             cant_txt = input("Ingrese la cantidad de ejemplares: ")

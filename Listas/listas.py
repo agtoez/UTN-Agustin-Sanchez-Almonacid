@@ -64,6 +64,13 @@ print(f"La lista sin datos para repetir es: {datosSinRepetir}")
 # 5) Crear una lista con los nombres de 8 estudiantes presentes en clase.
 # • Preguntar al usuario si quiere agregar un nuevo estudiante o eliminar uno existente.
 # • Mostrar la lista final actualizada.
+alumnos = ["Agustín", "Tomás", "Ezequiel", "Eliseo", "Simón", "Alina", "Margarita", "Ana"]
+while True:
+    print("1: Ingrese 1 para agregar un nuevo estudiante.")
+    print("2: Ingrese 2 para eliminar un estudiante.")
+    print("0: Ingrese 0 para salir.")
+
+
 # 6) Dada una lista con 7 números, rotar todos los elementos una posición hacia la derecha (el
 # último pasa a ser el primero).
 # 7) Crear una matriz (lista anidada) de 7x2 con las temperaturas mínimas y máximas de una
