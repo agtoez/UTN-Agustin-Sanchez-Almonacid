@@ -35,9 +35,32 @@ else:
 # 3) Generar una lista con 15 números enteros al azar entre 1 y 100.
 # • Crear una lista con los pares y otra con los impares.
 # • Mostrar cuántos números tiene cada lista.
+import random
+
+numeros = [random.randint(1, 100) for _ in range(15)]
+print("Lista de números generados:", numeros)
+
+pares = [n for n in numeros if n % 2 == 0]
+impares = [n for n in numeros if n % 2 != 0]
+
+print("Lista de pares:", pares)
+print("Cantidad de pares:", len(pares))
+
+print("Lista de impares:", impares)
+print("Cantidad de impares:", len(impares))
+
 # 4) Dada una lista con valores repetidos:
 # • Crear una nueva lista sin elementos repetidos.
 # • Mostrar el resultado.
+datos = [1, 3, 5, 3, 7, 1, 9, 5, 3]
+
+datosSinRepetir = []
+
+for e in datos:
+    if e not in datosSinRepetir:
+        datosSinRepetir.append(e)
+print(f"La lista sin datos para repetir es: {datosSinRepetir}")
+
 # 5) Crear una lista con los nombres de 8 estudiantes presentes en clase.
 # • Preguntar al usuario si quiere agregar un nuevo estudiante o eliminar uno existente.
 # • Mostrar la lista final actualizada.
