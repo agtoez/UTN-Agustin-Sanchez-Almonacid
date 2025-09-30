@@ -8,6 +8,10 @@ print(lista)
 for elemento in lista:
     total += elemento
 print(f"El promedio es de: {total/10}")
+valorAlto = max(lista)
+print(f"El valor más alto es: {valorAlto}")
+valorBajo = min(lista)
+print(f"El valor más bajo es: {valorBajo}")
 # 2) Pedir al usuario que cargue 5 productos en una lista.
 # • Mostrar la lista ordenada alfabéticamente. Investigue el uso del método sorted().
 # • Preguntar al usuario qué producto desea eliminar y actualizar la lista.
