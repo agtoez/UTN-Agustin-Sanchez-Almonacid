@@ -15,6 +15,23 @@ print(f"El valor más bajo es: {valorBajo}")
 # 2) Pedir al usuario que cargue 5 productos en una lista.
 # • Mostrar la lista ordenada alfabéticamente. Investigue el uso del método sorted().
 # • Preguntar al usuario qué producto desea eliminar y actualizar la lista.
+lista2 = []
+count = 0
+while count < 5:
+    lista2.append(input("Ingrese un producto, (hasta 5)"))
+    count += 1
+
+lista2 = sorted(lista2)
+print(f"La lista ordenada queda de la siguiente forma: {lista2}")
+
+eliminarProducto = input("Ingrese el nombre del producto que deseé elimnar: ")
+
+if eliminarProducto in lista2:
+    lista2.remove(eliminarProducto)
+    print(f"Lista actualizada: {lista2}")
+else:
+    print("El producto no está en la lista.")
+    
 # 3) Generar una lista con 15 números enteros al azar entre 1 y 100.
 # • Crear una lista con los pares y otra con los impares.
 # • Mostrar cuántos números tiene cada lista.
