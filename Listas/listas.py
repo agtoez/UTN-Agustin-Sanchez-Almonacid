@@ -91,6 +91,16 @@ lista7 = [
     [31,17],
 ]
 
+promMin = sum(t[0] for t in lista7) / len(lista7)
+promMax = sum(t[1] for t in lista7) / len(lista7)
+
+amplitudes = [t[1] - t[0] for t in lista7]
+diaMayorAmplitud = amplitudes.index(max(amplitudes)) + 1
+
+print(f"Promedio mínimas: {prom_min}")
+print(f"Promedio máximas: {prom_max}")
+print(f"Mayor amplitud térmica: Día {diaMayorAmplitud}")
+
 
 
 # 8) Crear una matriz con las notas de 5 estudiantes en 3 materias.
