@@ -73,10 +73,26 @@ while True:
 
 # 6) Dada una lista con 7 números, rotar todos los elementos una posición hacia la derecha (el
 # último pasa a ser el primero).
+
+lista6 = [1, 2, 3, 4, 5, 6, 7]
+print(lista6[::-1])
+
 # 7) Crear una matriz (lista anidada) de 7x2 con las temperaturas mínimas y máximas de una
 # semana.
 # • Calcular el promedio de las mínimas y el de las máximas.
 # • Mostrar en qué día se registró la mayor amplitud térmica.
+lista7 = [
+    [26,10],
+    [28,13],
+    [31,17],
+    [34,19],
+    [34,16],
+    [29,14],
+    [31,17],
+]
+
+
+
 # 8) Crear una matriz con las notas de 5 estudiantes en 3 materias.
 # • Mostrar el promedio de cada estudiante.
 # • Mostrar el promedio de cada materia.
