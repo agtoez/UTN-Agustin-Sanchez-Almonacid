@@ -227,3 +227,21 @@ def tateti():
 # • Mostrar el total vendido por cada producto.
 # • Mostrar el día con mayores ventas totales.
 # • Indicar cuál fue el producto más vendido en la semana.
+ventas = [
+    [150, 200, 250, 300, 350, 400, 450],  # Producto 1
+    [100, 150, 200, 250, 300, 350, 400],  # Producto 2
+    [200, 250, 300, 350, 400, 450, 500],  # Producto 3
+    [50, 100, 150, 200, 250, 300, 350]    # Producto 4
+]
+# Total vendido por cada producto
+for i, producto in enumerate(ventas):
+    total_producto = sum(producto)
+    print(f"Total vendido del Producto {i+1}: {total_producto}")
+# Día con mayores ventas totales
+ventas_diarias = [sum(ventas[i][j] for i in range(4)) for j in range(7)]
+dia_mayores_ventas = ventas_diarias.index(max(ventas_diarias)) + 1
+print(f"Día con mayores ventas totales: Día {dia_mayores_ventas}")
+# Producto más vendido en la semana
+totales_productos = [sum(producto) for producto in ventas]
+producto_mas_vendido = totales_productos.index(max(totales_productos)) + 1
+print(f"Producto más vendido en la semana: Producto {producto_mas_vendido}")
