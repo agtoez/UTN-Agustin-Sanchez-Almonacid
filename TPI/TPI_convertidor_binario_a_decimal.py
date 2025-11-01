@@ -1,4 +1,3 @@
-# Conversor de decimal <-> binario (sin try/except, validaciones sencillas)
 print("|||| Conversor de decimal a binario y de binario a decimal ||||")
 
 while True:
@@ -32,11 +31,11 @@ while True:
         else:
             cuerpo = dec_txt
             signo = 1
-
+        #Validación
         if cuerpo == "" or not cuerpo.isdigit():
             print("Error: debe ingresar un número entero válido (ej. 42 o -5).")
             continue
-
+        #Si es 0
         numero = int(dec_txt)
         if numero == 0:
             print("El número en binario es: 0")
