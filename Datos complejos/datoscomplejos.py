@@ -146,3 +146,10 @@ for pais in paises:
     capital_a_pais[capital] = pais
 
 print(capital_a_pais)
+
+#Posibles mejoras:
+# - Agregar validaciones.
+# - Unificar el manejo de mayúsculas/minúsculas.
+# - Validar que los nombres no se repitan al cargar contactos o alumnos (avisar si ya existe).
+# - Usar f-strings en todos los prints para mejorar legibilidad y consistencia.
+# - Normalizar acentos o caracteres especiales para evitar problemas de comparación al buscar palabras o productos.
