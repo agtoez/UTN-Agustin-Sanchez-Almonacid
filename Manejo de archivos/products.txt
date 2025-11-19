@@ -1,3 +1,4 @@
 lapicera,2000.0,30
 cuaderno,10000.0,20
 regla,9000.0,10
+agus,264.0,1
